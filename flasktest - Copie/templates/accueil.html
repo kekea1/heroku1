@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+        <meta charset="utf-8" />
+                    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.11/vue.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    </head>
+        <title>TITRE NORMAL</title>
+    </head>
+
+    <body>
+        <h1>MON TITRE BPOODY</h1>
+        <div id="app">
+            <nav class="navbar navbar-expand-sm bg-light">  
+                <ul class="navbar-nav">
+                
+                {% for setmatiere in elements %}
+                    <li class="nav-item dropdown">
+                        <a data-toggle="dropdown" class="nav-link dropdown-toggle"> </a>
+                        <div class="dropdown-menu">
+                            
+                           
+                            {% for i in range(2) %}
+                            <span>
+                                <a class="dropdown-item text-uppercase text-info" href="#">
+                                     {%  if  i==0 %} unites {% endif%}
+                                    {%  if  i==1 %} Autres {% endif%}
+                                    
+                                </a>
+                                {% for unites in setmatiere[i] %}
+                               
+                              
+
+                                <a class="dropdown-item">{{unites}}</a>
+                                {% endfor %}
+                                
+                             
+                                
+                            </span>
+                             {% endfor %}
+                            
+                        </div>
+                    </li>
+                {% endfor %}
+                
+                </ul>
+            </nav>
+    
+        </div>
+
+    </body>
+</html>

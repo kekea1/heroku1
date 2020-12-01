@@ -1,0 +1,31 @@
+`<div>
+  <ol class="list-unstyled">
+			<li id="appli" v-for="(valeur,name,index) in parties">
+	   			<span style="padding: 2px">PARTIE {{ index+1}}: {{name}}</span>
+	   			<ul> 
+	   				<li style="padding: 3px" v-for="(souspartie,index) in valeur"><a :href="'sp/'+index+'.html' ">{{souspartie}}</a><br></li>
+	   			</ul>	
+			</li>
+		</ol>
+		</div>`
+
+
+
+
+<div>
+	<ol class="list-unstyled">
+		{% for partie in parties %}
+		<span style="padding: 2px">PARTIE{{nomsparties[parties.index(partie)]+1}} : {{nomsparties[parties.index(partie)]}}</span>
+			<ul>
+				{%for sp in partie%}
+				<li style="padding: 3px"> {{sp}}</li>
+				{% endfor %}
+				
+			</ul>
+
+		{%endfor%}
+
+
+	</ol>
+		
+</div>
